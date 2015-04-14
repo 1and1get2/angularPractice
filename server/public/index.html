@@ -2,24 +2,40 @@
 <head>
 	<title>Demo</title>
 	<script type="text/javascript" src="js/lib/angular.min.js"></script>
-	<script type="text/javascript" src="js/controllers/app.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
 </head>
 <body>
-	<div class="container" ng-controller="AppCtrl">
+	<div class="container" ng-controller="AppCtrl" ng-click="divClick()">
 		<h1>AngulAir</h1>
+		<div class="pull-left span6">
+			<ul>
+				<li ng-repeat="airport in airports">
+					<a href="" ng-click="setAirport(airport.code)">{{airport.code}} - {{airport.name}}</a>
+					- <a href="" ng-click="editAirport(airport.code)">Edit</a>
+				</li>
+			</ul>
 
-		<ul ng-repeat="airport in airports">
-			<li>{{airport.code}}</li>
-			<li>{{airport.city}}</li>
-			<li>{{airport.name}}</li>
-		</ul>
+		</div>
+		<div class="span5" >
+			<div ng-show="currentAirport">
+			  <h3>{{currentAirport.name}}</h3>
 
+			  <h4>Destinations</h4>
+
+			  <ul>
+			    <li ng-repeat="destination in currentAirport.destinations">
+			      {{destination}}
+			    </li>
+			  </ul>
+			</div>
+		</div>
+		<div class="span12" >
+			<div ng-show="editing">
+				<h3>Edit Airport</h3>
+				<input ng-model="editing.name" value="" class="input-xlarge" />
+			</div>
+		</div>
 	</div>
-
-		<ul>
-			<li ng-repeat="airport in airports">{{airport.code}}</li>
-		</ul>
 </body>
 </html>
