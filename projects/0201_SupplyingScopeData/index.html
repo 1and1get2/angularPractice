@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Template</title>
+	<script type="text/javascript" src="./../../lib/js/angular.js"></script>
+	<script type="text/javascript" src="../../lib/js/angular-resource.js"></script>
+	<script type="text/javascript" src="../../lib/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/controllers/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/" />
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl"></div>
+    <h1>AngularAir</h1>
+    <ul ng-repeat="airport in airports">
+        <li>{{airport.code}}</li>
+        <li>{{airport.city}}</li>
+        <li>{{airport.name}}</li>
+    </ul>
+</body>
+</html>
