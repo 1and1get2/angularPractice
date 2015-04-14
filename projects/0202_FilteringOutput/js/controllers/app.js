@@ -26,15 +26,6 @@ function AppCtrl ($scope) {
         "LAX",
         "DFW"
       ]
-    },
-    "xxx":{
-      "code": "xxx",
-      "name": "xxxxxxxxt",
-      "city": "St. xx",
-      "destinations": [
-        "LAX",
-        "MKE"
-      ]
     }
   };
 }
